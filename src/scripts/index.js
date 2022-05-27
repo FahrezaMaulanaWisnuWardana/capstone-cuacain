@@ -3,7 +3,7 @@ import '../components/app-bar'
 import '../components/nav-bar'
 import '../styles/main.css'
 import GetLoc from './data/get-location'
-
+import './global/request'
 const myIp = async() =>{
     try {
         const response = await axios.get('https://api.ipify.org?format=json')
