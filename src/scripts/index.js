@@ -6,7 +6,7 @@ import { convertDate , dateOnly } from './utils/date'
 import cuaca from './utils/weather'
 import GetLoc from './data/get-location'
 import GetWeather from './data/weather/get-weather'
-
+import GetSeismic from './data/seismic/get-seismic'
 const myIp = async() =>{
     try {
         const response = await axios.get('https://api.ipify.org?format=json')
