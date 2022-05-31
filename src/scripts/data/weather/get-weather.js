@@ -61,7 +61,7 @@ class weatherSource {
             return parseJson[1].children[0].children
         })
     }
-    static async papua() {
+    static async papuaBarat() {
         return await axios.get(`https://cors-anywhere.herokuapp.com/${API_ENDPOINT.LIST_WEATHER}-PapuaBarat.xml`)
         .then((response)=>{
             const parseJson = txml.parse(response.data)
@@ -212,6 +212,13 @@ class weatherSource {
         })
     }
     // Pulau Sulawesi
+    static async gorontalo() {
+        return await axios.get(`https://cors-anywhere.herokuapp.com/${API_ENDPOINT.LIST_WEATHER}-Gorontalo.xml`)
+        .then((response)=>{
+            const parseJson = txml.parse(response.data)
+            return parseJson[1].children[0].children
+        })
+    }
     static async sulbar() {
         return await axios.get(`https://cors-anywhere.herokuapp.com/${API_ENDPOINT.LIST_WEATHER}-SulawesiBarat.xml`)
         .then((response)=>{

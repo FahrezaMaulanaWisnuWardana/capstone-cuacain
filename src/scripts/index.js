@@ -11,7 +11,78 @@ const myIp = async() =>{
     try {
         const response = await axios.get('https://api.ipify.org?format=json')
         const listAddress = await GetLoc.location(response.data.ip)
-        const weather = await GetWeather.jawaTimur()
+        let weather = await GetWeather.ibukota()
+        if(listAddress.regionName === "Aceh"){
+            weather = await GetWeather.aceh()
+        }else if(listAddress.regionName === "Bali"){
+            weather = await GetWeather.bali()
+        }else if(listAddress.regionName === "Banten"){
+            weather = await GetWeather.banten()
+        }else if(listAddress.regionName === "East Java"){
+            weather = await GetWeather.jawaTimur()
+        }else if(listAddress.regionName === "Central Java"){
+            weather = await GetWeather.jawaTengah()
+        }else if(listAddress.regionName === "West Java"){
+            weather = await GetWeather.jawaBarat()
+        }else if(listAddress.regionName === "Banten"){
+            weather = await GetWeather.jawaBarat()
+        }else if(listAddress.regionName === "Bangka Belitung Islands"){
+            weather = await GetWeather.bangkaBelitung()
+        }else if(listAddress.regionName === "Bengkulu"){
+            weather = await GetWeather.bengkulu()
+        }else if(listAddress.regionName === "Central Kalimantan"){
+            weather = await GetWeather.kalteng()
+        }else if(listAddress.regionName === "Central Sulawesi"){
+            weather = await GetWeather.sulteng()
+        }else if(listAddress.regionName === "East Kalimantan"){
+            weather = await GetWeather.kaltim()
+        }else if(listAddress.regionName === "East Nusa Tenggara"){
+            weather = await GetWeather.ntt()
+        }else if(listAddress.regionName === "Gorontalo"){
+            weather = await GetWeather.gorontalo()
+        }else if(listAddress.regionName === "Capital Special Region of Jakarta"){
+            weather = await GetWeather.jakarta()
+        }else if(listAddress.regionName === "Jambi"){
+            weather = await GetWeather.jambi()
+        }else if(listAddress.regionName === "Lampung"){
+            weather = await GetWeather.lampung()
+        }else if(listAddress.regionName === "Maluku"){
+            weather = await GetWeather.maluku()
+        }else if(listAddress.regionName === "North Kalimantan"){
+            weather = await GetWeather.kalut()
+        }else if(listAddress.regionName === "North Maluku"){
+            weather = await GetWeather.malukuUtara()
+        }else if(listAddress.regionName === "North Sulawesi"){
+            weather = await GetWeather.sulut()
+        }else if(listAddress.regionName === "Nort Sumatra"){
+            weather = await GetWeather.sumut()
+        }else if(listAddress.regionName === "Papua"){
+            weather = await GetWeather.papua()
+        }else if(listAddress.regionName === "Riau"){
+            weather = await GetWeather.riau()
+        }else if(listAddress.regionName === "Riau Island"){
+            weather = await GetWeather.kepri()
+        }else if(listAddress.regionName === "Southeast Sulawesi"){
+            weather = await GetWeather.sulteng()
+        }else if(listAddress.regionName === "South Kalimantan"){
+            weather = await GetWeather.kalsel()
+        }else if(listAddress.regionName === "South Sulawesi"){
+            weather = await GetWeather.sulsel()
+        }else if(listAddress.regionName === "South Sumatra"){
+            weather = await GetWeather.susel()
+        }else if(listAddress.regionName === "West Kalimantan"){
+            weather = await GetWeather.kalbar()
+        }else if(listAddress.regionName === "West Nusa Tenggara"){
+            weather = await GetWeather.ntb()
+        }else if(listAddress.regionName === "West Papua"){
+            weather = await GetWeather.papuaBarat()
+        }else if(listAddress.regionName === "West Sulawesi"){
+            weather = await GetWeather.sulbar()
+        }else if(listAddress.regionName === "West Sumatra"){
+            weather = await GetWeather.subar()
+        }else if(listAddress.regionName === "Special Region of Yogyakarta"){
+            weather = await GetWeather.diy()
+        }
         document.querySelector("#main-content").innerHTML = weather.slice(1).map((data)=>{
             if(data.attributes.description === listAddress.city){
                 const date = new Date()
