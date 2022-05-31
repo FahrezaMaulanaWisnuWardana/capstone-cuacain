@@ -5,9 +5,11 @@ import '../styles/main.css'
 import { convertDate ,dateOnly } from './utils/date'
 import { cuaca, filter } from './utils/weather'
 import GetLoc from './data/get-location'
+import GetSeismic from './data/seismic/get-seismic'
 
 const myIp = async() =>{
     try {
+        const Seismic = await GetSeismic.EQBig()
         const response = await axios.get('https://api.ipify.org?format=json')
         const listAddress = await GetLoc.location(response.data.ip)
         const weather = await filter(listAddress.regionName)

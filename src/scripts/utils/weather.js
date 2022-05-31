@@ -13,7 +13,7 @@ const cuaca = (kode) => {
         return "Cerah Berawan"
     }
     if(checkCuaca === 3){
-        return "Berawan "
+        return "Berawan"
     }
     if(checkCuaca === 4){
         return "Berawan Tebal"
@@ -22,10 +22,10 @@ const cuaca = (kode) => {
         return "Udara Kabur"
     }
     if(checkCuaca === 10){
-        return "Asap "
+        return "Asap"
     }
     if(checkCuaca === 45){
-        return "Kabut "
+        return "Kabut"
     }
     if(checkCuaca === 60){
         return "Hujan Ringan"
@@ -34,7 +34,7 @@ const cuaca = (kode) => {
         return "Hujan Sedang"
     }
     if(checkCuaca === 63){
-        return "Hujan Lebat "
+        return "Hujan Lebat"
     }
     if(checkCuaca === 80){
         return "Hujan Lokal"
