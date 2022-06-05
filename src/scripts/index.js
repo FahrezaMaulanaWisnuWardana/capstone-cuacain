@@ -1,19 +1,25 @@
 import axios from 'axios'
-import '../components/app-bar'
 import '../components/nav-bar'
 import '../styles/main.css'
 import '../styles/responsive.css'
+import App from './views/app';
 import { convertDate ,dateOnly } from './utils/date'
 import { cuaca, filter } from './utils/weather'
 import GetLoc from './data/get-location'
 import GetSeismic from './data/seismic/get-seismic'
 
-const menu = document.querySelector('#menu');
-const navMenu = document.querySelector('#nav-menu');
-
-menu.addEventListener('click', function (event) {
-    menu.classList.toggle('open');
-    navMenu.classList.toggle('open');
+const app = new App({
+  button: document.querySelector('#menu'),
+  drawer: document.querySelector('#nav-menu'),
+  content: document.querySelector('#main-content'),
+});
+ 
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+ 
+window.addEventListener('load', () => {
+  app.renderPage();
 });
 
 const myIp = async() =>{
