@@ -1,4 +1,4 @@
 const CONFIG = {
-    BASE_URL:'http://localhost:3000'
+    BASE_URL:'https://cuacain-backend.herokuapp.com'
 }
 export default CONFIG
