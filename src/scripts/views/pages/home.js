@@ -80,7 +80,8 @@ const Home = {
             'waktuBesok' : waktuBesok,
             'cuacaBesok': cuacaBesok,
             'waktuLusa': waktuLusa,
-            'cuacaLusa': cuacaLusa
+            'cuacaLusa': cuacaLusa,
+            'kota':kota
           }]
           HomeContainer.innerHTML += HomeTemplate(dataArr)
         }

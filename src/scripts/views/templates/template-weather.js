@@ -2,6 +2,7 @@ const HomeTemplate = (data) => {
     return `
     <div>
         <ul>
+            <li>${data[0].kota}</li>
             <li>${data[0].waktuHariIni}</li>
             <li>${data[0].cuacaHariIni}</li>
             
