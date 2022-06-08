@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* NAV BAR */
+  
+  .nav-bar{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px;
+      background-color: #354259;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.7);
+  }
+  
+  .nav-bar-menu a{
+      background-color: transparent;
+      color: white;
+      border: white;
+      font-size: 32px;
+      padding: 5px;
+      text-decoration: none;
+      margin-right: 40px;
+  }
+  
+  .nav-bar-menu button:hover{
+      font-weight: bolder;
+  }
+  
+  .nav-bar-link li{
+      display: inline-block;
+      padding: 10px;
+  }
+  
+  .nav-bar-link li a{
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+  }
+  
+  .nav-bar-link li a:hover{
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+      background-color: blue;
+      transition: all 0.3s;
+  }
+  
+  .nav-logo{
+      margin-right: auto;
+      color: white;
+  }
+  
+  .nav-logo label{
+      font-size: 32px;
+      font-weight: bold;
+  }
+  .header {
+    height: 100vh;
+    margin-top: -145px;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0,0,0,0,5),rgba(0,0,0,0,5)),url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+
+.search-field{
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.search-btn{
+    height: 50px;
+    width: 150px;
+    background: #ffeb3f;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+    
+}
+
+.search-btn{
+    background: #ffc107;
+}
+
+.wraper {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 2px #e67e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    
+}
+
+.pre_text {
+    font-weight: bold;
+    margin-right: 16px;
+}
+
+.text_wraper {
+    height: 45px;
+    overflow-y: hidden;
+}
+
+.text_wraper .innerText {
+    display: flex;
+    flex-direction: column;
+    line-height: 45px;
+}

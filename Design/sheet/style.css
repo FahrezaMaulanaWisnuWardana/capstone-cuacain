@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* NAV BAR */
+  
+  .nav-bar{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px;
+      background-color: #354259;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.7);
+  }
+  
+  .nav-bar-menu a{
+      background-color: transparent;
+      color: white;
+      border: white;
+      font-size: 32px;
+      padding: 5px;
+      text-decoration: none;
+      margin-right: 40px;
+  }
+  
+  .nav-bar-menu button:hover{
+      font-weight: bolder;
+  }
+  
+  .nav-bar-link li{
+      display: inline-block;
+      padding: 10px;
+  }
+  
+  .nav-bar-link li a{
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+  }
+  
+  .nav-bar-link li a:hover{
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+      background-color: blue;
+      transition: all 0.3s;
+  }
+  
+  .nav-logo{
+      margin-right: auto;
+      color: white;
+  }
+  
+  .nav-logo label{
+      font-size: 32px;
+      font-weight: bold;
+  }
+
+
+.cek-cuaca {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.kota {
+    text-align: center;
+}
+
+.detail {
+    margin: 20px 0 0;
+}
+
+.detail-kota {
+    color: rgb(168, 168, 168);
+}
+
+.provinsi {
+    color: rgb(168, 168, 168);
+    margin: 10px 0 20px;
+}
+
+.detail ul {
+    border-bottom: 3px solid greenyellow;
+    width: 100%;
+    list-style: none;
+    display: flex;
+}
+
+.active {
+    background-color: greenyellow;
+}
+
+.detail li {
+    text-align: center;
+    padding: 5px 15px;
+    flex-grow: 1;
+}
+
+.detail li:hover {
+    background-color: greenyellow;
+}
+
+.detail img {
+    width: 95%;
+    height: 400px;
+    display: block;
+    margin: 5px auto;
+}
+
+.image-container {
+    position: relative;    
+}
+
+.detail-cuaca {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.detail-cuaca img {
+    width: 90px;
+    height: auto;
+}
+
+.detail-cuaca p {
+    margin-bottom: 15px;
+}
