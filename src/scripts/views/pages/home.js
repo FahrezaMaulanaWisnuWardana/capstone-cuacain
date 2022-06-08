@@ -14,8 +14,16 @@ const getLocation = (callback) => {
 const Home = {
   async render() {
     return `
-      <h1>Halo, selamat datang</h1>
-      <div id="maincontent"></div>
+    <div class="hero">
+      <div class="hero-text">
+          <h2>Halo, Selamat datang</p>
+          <h1>Informasi Cuaca Terkini <br> dan Data Gempa Yang Akurat</h1>
+          <p>Memiliki informasi berbagai cuaca dan data gempa lengkap dengan mudah dan nyaman</p>
+      </div>
+      <div id="maincontent">
+      
+      </div>
+    </div>
     `;
   },
  

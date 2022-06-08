@@ -58,3 +58,71 @@
       font-size: 32px;
       font-weight: bold;
   }
+
+/* HOME PAGE */
+/* HERO */
+
+.hero{
+    padding: 100px 100px;
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    min-height: 1000px;
+}
+
+.hero h2{
+    color: #371B58;
+}
+
+.hero p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hero-text{
+    padding-bottom: 100px;
+}
+
+/* ABOUT US PAGE */
+
+.about-us{
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    padding-bottom: 100px;
+}
+
+.about-us p{
+    text-align: center;
+    padding: 0px 100px;
+}
+
+.logo{
+    padding: 40px 0px;
+    text-align: center;
+}
+
+.logo label{
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.crew-header{
+    padding-top: 80px;
+    text-align: center;
+}
+
+.profile{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    padding-bottom: 100px;
+    margin: 30px 0px;
+    gap: 20px;
+}
+
+.crew img{
+    width: 150px;
+    clip-path: circle();
+}
+
+.crew h1{
+    font-size: 18px;
+}
