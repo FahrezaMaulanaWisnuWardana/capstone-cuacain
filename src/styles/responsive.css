@@ -26,3 +26,19 @@
         display: none;
     }
 }
+
+/* ABOUT US PAGE */
+
+@media screen and (max-width: 600px){
+    .about-us p{
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (min-width: 850px){
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
