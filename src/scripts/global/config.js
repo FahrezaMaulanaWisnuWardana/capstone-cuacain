@@ -1,4 +1,4 @@
 const CONFIG = {
-    BASE_URL:'https://data.bmkg.go.id/DataMKG'
+    BASE_URL:'http://localhost:3000'
 }
 export default CONFIG

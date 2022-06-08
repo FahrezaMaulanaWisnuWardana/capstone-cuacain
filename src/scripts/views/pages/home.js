@@ -29,7 +29,7 @@ const Home = {
       let kota = myLocation[0][0].kota
       let filterCuaca = await filter(propinsi)
       
-      filterCuaca.slice(1).map((data)=>{
+      filterCuaca.data.slice(1).map((data)=>{
         if(data.attributes.description === kota){  
           const date = new Date()
           const justDate = dateOnly(data.children[8].children[0].attributes.datetime)

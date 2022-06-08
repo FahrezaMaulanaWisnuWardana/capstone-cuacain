@@ -1,5 +1,4 @@
 const HomeTemplate = (data) => {
-    console.log(data)
     return `
     <div>
         <ul>

@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "regenerator-runtime": "^0.13.9",
-    "txml": "^5.1.1"
+    "regenerator-runtime": "^0.13.9"
   }
 }
