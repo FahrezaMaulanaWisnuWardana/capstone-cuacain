@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-prebuild": "npm install --dev",
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
@@ -25,7 +26,6 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "regenerator-runtime": "^0.13.9",
-    "txml": "^5.1.1"
+    "regenerator-runtime": "^0.13.9"
   }
 }

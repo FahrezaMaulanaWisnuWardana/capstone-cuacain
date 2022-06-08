@@ -4,25 +4,13 @@ import API_ENDPOINT from '../../global/api-endpoint'
 // EQ = EarthQuake
 class seismicSource {
     static async EQNew() {
-        return await axios.get(`https://cors-anywhere.herokuapp.com/${API_ENDPOINT.LIST_EARTHQUAKE}/autogempa.json`)
-        .then((response)=> {
-            console.log(response.data)
-            return response.data
-        })
+        return await axios.get(`${API_ENDPOINT.LIST_EARTHQUAKE}-terbaru`)
     }
     static async EQBig() {
-        return await axios.get(`https://cors-anywhere.herokuapp.com/${API_ENDPOINT.LIST_EARTHQUAKE}/gempaterkini.json`)
-        .then((response)=> {
-            console.log(response.data)
-            return response.data
-        })
+        return await axios.get(`${API_ENDPOINT.LIST_EARTHQUAKE}-besar`)
     }
-    static async EQLess() {
-        return await axios.get(`https://cors-anywhere.herokuapp.com/${API_ENDPOINT.LIST_EARTHQUAKE}/gempadirasakan.json`)
-        .then((response)=> {
-            console.log(response.data)
-            return response.data
-        })
+    static async EQSmall() {
+        return await axios.get(`${API_ENDPOINT.LIST_EARTHQUAKE}-kecil`)
     }
 }
 export default seismicSource;

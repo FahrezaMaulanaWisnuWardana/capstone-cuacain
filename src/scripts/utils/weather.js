@@ -55,29 +55,29 @@ const filter = async(province) => {
         return await GetWeather.bali()
     }else if(province === "Banten"){
         return await GetWeather.banten()
-    }else if(province === "East Java"){
+    }else if(province === "Jawa Timur"){
         return await GetWeather.jawaTimur()
-    }else if(province === "Central Java"){
+    }else if(province === "Jawa Tengah"){
         return await GetWeather.jawaTengah()
-    }else if(province === "West Java"){
+    }else if(province === "Jawa Barat"){
         return await GetWeather.jawaBarat()
     }else if(province === "Banten"){
         return await GetWeather.jawaBarat()
-    }else if(province === "Bangka Belitung Islands"){
+    }else if(province === "Bangka Belitung"){
         return await GetWeather.bangkaBelitung()
     }else if(province === "Bengkulu"){
         return await GetWeather.bengkulu()
-    }else if(province === "Central Kalimantan"){
+    }else if(province === "Kalimantan Tengah"){
         return await GetWeather.kalteng()
-    }else if(province === "Central Sulawesi"){
+    }else if(province === "Sulawesi Tengah"){
         return await GetWeather.sulteng()
-    }else if(province === "East Kalimantan"){
+    }else if(province === "Kalimantan Timur"){
         return await GetWeather.kaltim()
-    }else if(province === "East Nusa Tenggara"){
+    }else if(province === "Nusa Tenggara Timur"){
         return await GetWeather.ntt()
     }else if(province === "Gorontalo"){
         return await GetWeather.gorontalo()
-    }else if(province === "Capital Special Region of Jakarta"){
+    }else if(province === "DKI Jakarta"){
         return await GetWeather.jakarta()
     }else if(province === "Jambi"){
         return await GetWeather.jambi()
@@ -85,39 +85,39 @@ const filter = async(province) => {
         return await GetWeather.lampung()
     }else if(province === "Maluku"){
         return await GetWeather.maluku()
-    }else if(province === "North Kalimantan"){
+    }else if(province === "Kalimantan Utara"){
         return await GetWeather.kalut()
-    }else if(province === "North Maluku"){
+    }else if(province === "Maluku Utara"){
         return await GetWeather.malukuUtara()
-    }else if(province === "North Sulawesi"){
+    }else if(province === "Sulawesi Utara"){
         return await GetWeather.sulut()
-    }else if(province === "Nort Sumatra"){
+    }else if(province === "Sumatra Utara"){
         return await GetWeather.sumut()
     }else if(province === "Papua"){
         return await GetWeather.papua()
     }else if(province === "Riau"){
         return await GetWeather.riau()
-    }else if(province === "Riau Island"){
+    }else if(province === "Kepulauan Riau"){
         return await GetWeather.kepri()
-    }else if(province === "Southeast Sulawesi"){
+    }else if(province === "Sulawesi Tenggara"){
         return await GetWeather.sulteng()
-    }else if(province === "South Kalimantan"){
+    }else if(province === "Kalimantan Selatan"){
         return await GetWeather.kalsel()
-    }else if(province === "South Sulawesi"){
+    }else if(province === "Sulawesi Selatan"){
         return await GetWeather.sulsel()
-    }else if(province === "South Sumatra"){
+    }else if(province === "Sumatra Selatan"){
         return await GetWeather.susel()
-    }else if(province === "West Kalimantan"){
+    }else if(province === "Kalimantan Barat"){
         return await GetWeather.kalbar()
-    }else if(province === "West Nusa Tenggara"){
+    }else if(province === "Nusa Tenggara Barat"){
         return await GetWeather.ntb()
-    }else if(province === "West Papua"){
+    }else if(province === "Papua Barat"){
         return await GetWeather.papuaBarat()
-    }else if(province === "West Sulawesi"){
+    }else if(province === "Sulawesi Barat"){
         return await GetWeather.sulbar()
-    }else if(province === "West Sumatra"){
+    }else if(province === "Sumatra Barat"){
         return await GetWeather.subar()
-    }else if(province === "Special Region of Yogyakarta"){
+    }else if(province === "DIYogyakarta"){
         return await GetWeather.diy()
     }
     return await GetWeather.ibukota()
