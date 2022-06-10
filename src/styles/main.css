@@ -126,3 +126,13 @@
 .crew h1{
     font-size: 18px;
 }
+
+/* FOOTER */
+
+.foot-bar{
+    color: white;
+    text-align: center;
+    background-color: #354259;
+    margin: 0 auto;
+    padding: 30px;
+}
