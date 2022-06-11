@@ -48,3 +48,12 @@
         gap: 20px;
     }
 }
+
+/* TEMPLATE HOME */
+
+@media screen and (max-width: 750px){
+    .weather{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
