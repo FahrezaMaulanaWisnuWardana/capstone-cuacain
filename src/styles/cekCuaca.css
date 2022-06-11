@@ -1,0 +1,153 @@
+#main-content {
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+}
+
+.header {
+    height: 100vh;
+    margin-top: -145px;
+    padding: 5%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* display: none; */
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.search-field{
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+
+.search-btn{
+    height: 50px;
+    width: 150px;
+    background: #ffeb3f;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+    
+}
+
+.search-btn{
+    background: #ffc107;
+}
+
+.wraper {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 2px #e67e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(140px);
+    /* margin-top: 150px; */
+    
+}
+
+.pre_text {
+    font-weight: bold;
+    margin-right: 16px;
+}
+
+.text_wraper {
+    height: 45px;
+    overflow-y: hidden;
+}
+
+.text_wraper .innerText {
+    display: flex;
+    flex-direction: column;
+    line-height: 45px;
+}
+
+.cek-cuaca {
+    position: relative;
+    width: 70%;
+    margin: 0px auto;
+}
+
+.back {
+    position: absolute;
+    top: -12px;
+    padding: 0px 10px;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back:active {
+    color: blue;
+}
+
+.kota {
+    text-align: center;
+}
+
+.detail {
+    margin: 20px 0 0;
+}
+
+.detail-kota {
+    color: rgb(168, 168, 168);
+}
+
+.provinsi {
+    color: rgb(168, 168, 168);
+    margin: 10px 0 20px;
+}
+
+.detail ul {
+    border-bottom: 3px solid greenyellow;
+    width: 100%;
+    list-style: none;
+    display: flex;
+}
+
+.active {
+    background-color: greenyellow;
+}
+
+.detail li {
+    text-align: center;
+    padding: 5px 15px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.detail li:hover {
+    background-color: greenyellow;
+}
+
+.detail img {
+    width: 95%;
+    height: 400px;
+    display: block;
+    margin: 5px auto;
+}
+
+.image-container {
+    position: relative;    
+}
+
+.detail-cuaca {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.detail-cuaca img {
+    width: 90px;
+    height: auto;
+}
+
+.detail-cuaca p {
+    margin-bottom: 15px;
+}
