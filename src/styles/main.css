@@ -58,3 +58,129 @@
       font-size: 32px;
       font-weight: bold;
   }
+
+/* HOME PAGE */
+/* HERO */
+
+.hero{
+    padding: 100px 100px;
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    min-height: 1000px;
+}
+
+.hero h2{
+    color: #371B58;
+}
+
+.hero p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hero-text{
+    padding-bottom: 100px;
+}
+
+/* Weather */
+
+.weather{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 16px;
+    padding: 50px 0px;
+    padding-right: 100px;
+}
+
+.box{   
+    border: 1px solid black;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    color: white;
+    border-radius: 20px;
+    min-height: 250px;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.box h3{
+    color: white;
+    padding-bottom: 40px;
+}
+
+/* ABOUT US PAGE */
+
+.about-us{
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    padding-bottom: 100px;
+}
+
+.about-us p{
+    text-align: center;
+    padding: 0px 100px;
+}
+
+.logo{
+    padding: 40px 0px;
+    text-align: center;
+}
+
+.logo label{
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.crew-header{
+    padding-top: 80px;
+    text-align: center;
+}
+
+.profile{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr;
+    padding-bottom: 100px;
+    margin: 30px 0px;
+    gap: 20px;
+}
+
+.crew img{
+    width: 150px;
+    clip-path: circle();
+}
+
+.crew h1{
+    font-size: 18px;
+}
+/* PAGE GEMPA */
+
+.gempa{
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.box-gempa{
+    padding: 10px;
+    margin: 0px 400px 50px 400px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.judul-gempa{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+}
+
+/* FOOTER */
+
+.foot-bar{
+    color: white;
+    text-align: center;
+    background-color: #354259;
+    margin: 0 auto;
+    padding: 30px;
+}

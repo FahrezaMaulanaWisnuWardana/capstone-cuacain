@@ -7,13 +7,13 @@
         top: 100px;
         gap: 0;
         background-color: #354259;
-        width: 200px;
+        width: 100%;
         text-align: center;
         transition: 0.3s;
     }
 
     .nav-bar-link li{
-        border-bottom: 1px solid cyan;
+        border-top: 1px solid cyan;
     }
 
     .nav-bar-link.open{
@@ -24,5 +24,36 @@
 @media screen and (min-width: 750px){
     .nav-bar-menu{
         display: none;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .hero{
+        padding: 30px 30px;
+    }
+}
+
+/* ABOUT US PAGE */
+
+@media screen and (max-width: 600px){
+    .about-us p{
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (min-width: 850px){
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/* TEMPLATE HOME */
+
+@media screen and (max-width: 750px){
+    .weather{
+        display: grid;
+        grid-template-columns: 1fr;
     }
 }
