@@ -14,8 +14,16 @@ const getLocation = (callback) => {
 const Home = {
   async render() {
     return `
-      <h1>Halo, selamat datang</h1>
-      <div id="maincontent"></div>
+    <div class="hero">
+      <div class="hero-text">
+          <h2>Halo, Selamat datang</p>
+          <h1>Informasi Cuaca Terkini <br> dan Data Gempa Yang Akurat</h1>
+          <p>Memiliki informasi berbagai cuaca dan data gempa lengkap dengan mudah dan nyaman</p>
+      </div>
+      <div id="maincontent">
+      
+      </div>
+    </div>
     `;
   },
  
@@ -29,7 +37,7 @@ const Home = {
       let kota = myLocation[0][0].kota
       let filterCuaca = await filter(propinsi)
       
-      filterCuaca.slice(1).map((data)=>{
+      filterCuaca.data.slice(1).map((data)=>{
         if(data.attributes.description === kota){  
           const date = new Date()
           const justDate = dateOnly(data.children[8].children[0].attributes.datetime)
@@ -72,7 +80,8 @@ const Home = {
             'waktuBesok' : waktuBesok,
             'cuacaBesok': cuacaBesok,
             'waktuLusa': waktuLusa,
-            'cuacaLusa': cuacaLusa
+            'cuacaLusa': cuacaLusa,
+            'kota':kota
           }]
           HomeContainer.innerHTML += HomeTemplate(dataArr)
         }
