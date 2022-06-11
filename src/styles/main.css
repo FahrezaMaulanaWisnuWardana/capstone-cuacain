@@ -152,6 +152,28 @@
 .crew h1{
     font-size: 18px;
 }
+/* PAGE GEMPA */
+
+.gempa{
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.box-gempa{
+    padding: 10px;
+    margin: 0px 400px 50px 400px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.judul-gempa{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+}
 
 /* FOOTER */
 
