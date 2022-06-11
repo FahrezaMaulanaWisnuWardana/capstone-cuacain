@@ -1,17 +1,25 @@
 const HomeTemplate = (data) => {
     return `
-    <div>
-        <ul>
-            <li>${data[0].kota}</li>
-            <li>${data[0].waktuHariIni}</li>
-            <li>${data[0].cuacaHariIni}</li>
-            
-            <li>${data[0].waktuBesok}</li>
-            <li>${data[0].cuacaBesok}</li>
-            
-            <li>${data[0].waktuLusa}</li>
-            <li>${data[0].cuacaLusa}</li>
-        </ul>
-    </div>`
+            <h1> Cuaca Pada Jakarta</h1>
+            <div class="weather">
+                <div class="box">
+                    <h3>${data[0].waktuHariIni}</h3>
+                    <div class="weather-info">
+                        <h1>${data[0].cuacaHariIni}</h1>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>${data[0].waktuBesok}</h3>
+                    <div class="weather-info">
+                        <h1>${data[0].cuacaBesok}</h1>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>${data[0].waktuLusa}</h3>
+                    <div class="weather-info">
+                        <h1>${data[0].cuacaLusa}</h1>
+                    </div>
+                </div>
+            </div>`
 }
 export {HomeTemplate}

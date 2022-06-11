@@ -81,6 +81,32 @@
     padding-bottom: 100px;
 }
 
+/* Weather */
+
+.weather{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 16px;
+    padding: 50px 0px;
+    padding-right: 100px;
+}
+
+.box{   
+    border: 1px solid black;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    color: white;
+    border-radius: 20px;
+    min-height: 250px;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.box h3{
+    color: white;
+    padding-bottom: 40px;
+}
+
 /* ABOUT US PAGE */
 
 .about-us{
@@ -125,4 +151,36 @@
 
 .crew h1{
     font-size: 18px;
+}
+/* PAGE GEMPA */
+
+.gempa{
+    background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.box-gempa{
+    padding: 10px;
+    margin: 0px 400px 50px 400px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.judul-gempa{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+}
+
+/* FOOTER */
+
+.foot-bar{
+    color: white;
+    text-align: center;
+    background-color: #354259;
+    margin: 0 auto;
+    padding: 30px;
 }
