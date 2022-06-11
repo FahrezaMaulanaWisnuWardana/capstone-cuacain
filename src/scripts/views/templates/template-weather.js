@@ -1,6 +1,6 @@
 const HomeTemplate = (data) => {
     return `
-      <h1> Cuaca Pada Jakarta</h1>
+      <h1 class="text-center"> Cuaca Pada ${data[0].kota}</h1>
       <div class="weather">
           <div class="box">
               <h3>${data[0].waktuHariIni}</h3>
@@ -33,7 +33,7 @@ const infoCuacaTemplate = () => {
         <h3 class="provinsi">Provinsi DKI Jakarta</h3>
 
         <ul>
-            <li class="active">Sen, 30 Mei</li>
+            <li class="active-time">Sen, 30 Mei</li>
             <li>Sel, 31 Mei</li>
             <li>Rab, 01 Jun</li>
             <li>Kam, 02 Jun</li>

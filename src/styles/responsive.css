@@ -55,5 +55,9 @@
     .weather{
         display: grid;
         grid-template-columns: 1fr;
+        padding-right: 0px;
+    }
+    .box{
+        margin-right: 0;
     }
 }
