@@ -1,3 +1,4 @@
+import Logo from '../public/images/weatherIcon-32px.png'
 class navBar extends HTMLElement{
     connectedCallback(){
         this.render()
@@ -10,7 +11,7 @@ class navBar extends HTMLElement{
             </div>
 
             <div class="nav-logo">
-                <img id="icon" src="images/weatherIcon-32px.png" alt="logo CuacaIn">
+                <img id="icon" src="${Logo}" alt="logo CuacaIn">
                 <label for="icon">CuacaIn</label>
             </div>
             <nav>

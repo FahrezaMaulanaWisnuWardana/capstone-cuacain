@@ -30,7 +30,6 @@ const CekCuaca = {
   },
  
   async afterRender() {
-    console.log(HomeTemplate);
     const cekCuaca1 = document.querySelector('.cek-cuaca');
     cekCuaca1.style.display = 'none';
     let innerTexts = document.querySelectorAll('.text_wraper .innerText');
