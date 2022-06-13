@@ -1,5 +1,7 @@
 import { async } from 'regenerator-runtime';
-import {HomeTemplate, infoCuacaTemplate} from '../templates/template-weather'
+import {infoCuacaTemplate} from '../templates/template-weather'
+import Provinsi from '../../../../wilayah.json'
+import { filter } from '../../utils/weather';
 
 const CekCuaca = {
   async render() {
@@ -20,17 +22,58 @@ const CekCuaca = {
 
     <div class="header form-container">
         <form>
-            <input type="text" class="search-field business" placeholder="Temukan Kota Kamu">
+        <select class="search-field business" id="provinsi">
+          <option value="">Pilih Provinsi</option>
+        </select>
+        <select class="search-field business" id="kota">
+          <option value="">Pilih Kota</option>
+        </select>
             <button class="search-btn">Search</button>
         </form>
     </div>  
-
-    ${infoCuacaTemplate};
     `;
   },
  
   async afterRender() {
     const cekCuaca1 = document.querySelector('.cek-cuaca');
+    const selectProv = document.querySelector('#provinsi');
+    const selectKota = document.querySelector('#kota');
+    let provArr = []
+    let kota = []
+    let output = [];
+    Provinsi.map((data)=>{
+      provArr.push(data.propinsi)
+    })
+    Provinsi.map((data)=>{
+      kota.push({
+        'provinsi':data.propinsi,
+        'kota':data.kota
+      })
+    })
+    let arrayGroupBy = Object.values(kota.reduce((c,{kota,...rest})=>{
+      let key = Object.values(rest).join('#')
+      c[key] = c[key] || {...rest,kota:[]}
+      c[key].kota.push(kota)
+      return c
+    },{}))
+    
+    let filtered = provArr.filter((item, pos, self)=>{
+      return self.indexOf(item) == pos;
+    })
+    filtered.map((data)=>{
+      selectProv.innerHTML += `<option value="${data}">${data}</option>`
+    })
+    selectProv.addEventListener('change',(e)=>{
+      selectKota.innerHTML=''
+      let data = e.target.value
+      let dataKota = arrayGroupBy.filter(ob => ob.provinsi === data)
+      dataKota[0].kota.map((data)=>{
+        selectKota.innerHTML +=`<option value="${data}">${data}</option>`
+      })
+
+    })
+    // Belum filtering cuaca by daerah
+
     cekCuaca1.style.display = 'none';
     let innerTexts = document.querySelectorAll('.text_wraper .innerText');
     if(innerTexts)

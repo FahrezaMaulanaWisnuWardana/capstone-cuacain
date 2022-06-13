@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "heroku-prebuild": "npm install --dev",
-    "start": "webpack-dev-server --port $PORT --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "start-dev": "webpack-dev-server --port $PORT --config webpack.prod.js",
     "build": "webpack --config webpack.prod.js"
   },

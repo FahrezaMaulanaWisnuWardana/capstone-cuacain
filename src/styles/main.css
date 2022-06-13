@@ -5,7 +5,9 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
   }
-  
+  #main-content{
+    min-height: 100vh;
+  }
   .d-flex{
     display: flex;
   }
@@ -212,8 +214,8 @@
 
 .gempa{
     background: linear-gradient(rgb(89, 172, 187), rgb(36, 36, 176));
-    padding-top: 50px;
-    padding-bottom: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .box-gempa{

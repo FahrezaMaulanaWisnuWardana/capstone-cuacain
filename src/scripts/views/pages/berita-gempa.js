@@ -9,10 +9,10 @@ const BeritaGempa = {
         <div id="mainGempa">
         </div>
         <div class="tab">
-          <button class="tablinks" onclick="tabs(event, 'besar')">Gempa Besar</button>
+          <button class="tablinks active" onclick="tabs(event, 'besar')">Gempa Besar</button>
           <button class="tablinks" onclick="tabs(event, 'kecil')">Gempa Kecil</button>
         </div>
-        <div id="besar" class="tabcontent">
+        <div id="besar" class="tabcontent" style="display:block">
         </div>
 
         <div id="kecil" class="tabcontent">
