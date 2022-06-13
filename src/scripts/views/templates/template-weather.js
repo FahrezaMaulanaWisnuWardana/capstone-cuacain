@@ -1,3 +1,7 @@
+import GempaIcon from '../../../public/icons-gempa/earthquake.png'
+import WaveIcon from '../../../public/icons-gempa/sound-wave.png'
+import LocIcon from '../../../public/icons-gempa/pin.png'
+
 const HomeTemplate = (data) => {
     return `
       <h1 class="text-center"> Cuaca Pada ${data[0].kota}</h1>
@@ -58,4 +62,57 @@ const infoCuacaTemplate = () => {
 </div>
 `
 }
-export {HomeTemplate, infoCuacaTemplate}
+const listGempaTerbaru = (data) => {
+    return `
+        <div class="box-gempa text-center">
+            <a class="judul-gempa" href="">Gempa Terbaru</a>
+            <p>${data[0].wilayah}</p>
+            <img class="m-auto" style="width:75%" src="https://data.bmkg.go.id/DataMKG/TEWS/${data[0].shakemap}">
+            <p>${data[0].tanggal} - ${data[0].waktu}</p>
+            <div class="d-flex middle-content my">
+                <img src="${GempaIcon}" alt="" class="ml" height="32px" id="kedalaman">
+                <label for="kedalaman" class="ml">${data[0].kedalaman}</label>
+                <img src="${WaveIcon}" alt="" class="ml" height="32px" id="magnitude">
+                <label for="magnitude" class="ml">${data[0].kekuatan} M</label>
+                <img src="${LocIcon}" alt="" class="ml" height="32px" id="location">
+                <label for="location" class="ml">LS : ${data[0].lintang} - Bujur : ${data[0].bujur}</label>
+            </div>
+            <p>Wilayah dirasakan: ${data[0].dirasakan}</p>
+        </div>
+        `
+}
+const listGempaBesar = (data) => {
+    return `
+        <div class="box-gempa">
+            <a class="judul-gempa">${data[0].wilayah}</a>
+            <p>${data[0].tanggal} - ${data[0].waktu}</p>
+            <p>Potensi : ${data[0].potensi}</p>
+            <div class="d-flex middle-content my">
+                <img src="${GempaIcon}" alt="" class="ml" height="32px" id="kedalaman">
+                <label for="kedalaman" class="ml">${data[0].kedalaman}</label>
+                <img src="${WaveIcon}" alt="" class="ml" height="32px" id="magnitude">
+                <label for="magnitude" class="ml">${data[0].kekuatan} M</label>
+                <img src="${LocIcon}" alt="" class="ml" height="32px" id="location">
+                <label for="location" class="ml">LS : ${data[0].lintang} - Bujur : ${data[0].bujur}</label>
+            </div>
+        </div>
+        `
+}
+const listGempaKecil = (data) => {
+    return `
+        <div class="box-gempa">
+            <a class="judul-gempa">${data[0].wilayah}</a>
+            <p>${data[0].tanggal} - ${data[0].waktu}</p>
+            <p>Dirasakan : ${data[0].dirasakan}</p>
+            <div class="d-flex middle-content my">
+                <img src="${GempaIcon}" alt="" class="ml" height="32px" id="kedalaman">
+                <label for="kedalaman" class="ml">${data[0].kedalaman}</label>
+                <img src="${WaveIcon}" alt="" class="ml" height="32px" id="magnitude">
+                <label for="magnitude" class="ml">${data[0].kekuatan} M</label>
+                <img src="${LocIcon}" alt="" class="ml" height="32px" id="location">
+                <label for="location" class="ml">LS : ${data[0].lintang} - Bujur : ${data[0].bujur}</label>
+            </div>
+        </div>
+        `
+}
+export {HomeTemplate, infoCuacaTemplate, listGempaTerbaru,listGempaBesar,listGempaKecil}

@@ -1,1 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="images/weather.png"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#2196f3"/><link rel="apple-touch-icon" href="/images/weatheIcon-32px.png"/><title>CuacaIn</title><script defer="defer" src="app.js"></script><script defer="defer" src="service-worker.js"></script></head><body><nav-bar></nav-bar><div id="main-content"></div><foot-bar></foot-bar></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="images/weather.png"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#2196f3"/><link rel="apple-touch-icon" href="/images/weatheIcon-32px.png"/><title>CuacaIn</title><script defer="defer" src="app.js"></script><script defer="defer" src="service-worker.js"></script></head><body><nav-bar></nav-bar><div id="main-content"></div><foot-bar></foot-bar></body><script>const tabs = (e, info) => {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(info).style.display = "block";
+        e.currentTarget.className += " active";
+    }</script></html>
