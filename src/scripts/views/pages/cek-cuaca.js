@@ -1,7 +1,9 @@
-import { async } from 'regenerator-runtime';
 import {infoCuacaTemplate} from '../templates/template-weather'
+import { convertDate ,dateOnly } from '../../utils/date'
+import { cuaca } from '../../utils/weather'
 import Provinsi from '../../../../wilayah.json'
-import { filter } from '../../utils/weather';
+
+const axios = require('axios')
 
 const CekCuaca = {
   async render() {
@@ -28,19 +30,20 @@ const CekCuaca = {
         <select class="search-field business" id="kota">
           <option value="">Pilih Kota</option>
         </select>
-            <button class="search-btn">Search</button>
+            <button class="search-btn" id="cari">Search</button>
         </form>
     </div>  
+    <div id="cuacaContainer" style="min-height:100vh"></div>
     `;
   },
  
   async afterRender() {
-    const cekCuaca1 = document.querySelector('.cek-cuaca');
     const selectProv = document.querySelector('#provinsi');
     const selectKota = document.querySelector('#kota');
+    const cariButton = document.querySelector("#cari")
+    const cuacaContainer = document.querySelector("#cuacaContainer")
     let provArr = []
     let kota = []
-    let output = [];
     Provinsi.map((data)=>{
       provArr.push(data.propinsi)
     })
@@ -70,11 +73,193 @@ const CekCuaca = {
       dataKota[0].kota.map((data)=>{
         selectKota.innerHTML +=`<option value="${data}">${data}</option>`
       })
-
+    })
+    cariButton.addEventListener('click', async()=>{
+      let getCuaca
+      let dataArr = []
+      let prov = selectProv.value
+      let kot = selectKota.value
+      const arrProv = prov.split(" ")
+      if(arrProv.length > 1){
+        getCuaca = await axios.get(`https://cuacain-backend.herokuapp.com/cuaca/${prov.replace(" ","-").toLowerCase()}`)
+        getCuaca.data.slice(1).map((data)=>{
+          if(data.attributes.description === kot){
+            const date = new Date()
+            const justDate = dateOnly(data.children[8].children[0].attributes.datetime)
+            let cuacaHariIni = cuaca(data.children[8].children[0].children[0].children[0])
+            let waktuHariIni = convertDate(data.children[8].children[0].attributes.datetime)
+            let kelembapan = data.children[2].children[0].children[0].children[0]
+            let suhu = data.children[4].children[0].children[0].children[0]
+            let angin = data.children[10].children[0].children[2].children[0]
+            if(date.getDate() === parseInt(justDate)){
+                if(date.getHours() >= 6 && date.getHours() < 12){
+                    cuacaHariIni = cuaca(data.children[8].children[1].children[0].children[0])
+                    kelembapan = data.children[2].children[1].children[0].children[0]
+                    angin = data.children[10].children[1].children[2].children[0]
+                }else if(date.getHours() >= 12 && date.getHours() < 18){
+                    cuacaHariIni = cuaca(data.children[8].children[2].children[0].children[0])
+                    kelembapan = data.children[2].children[2].children[0].children[0]
+                    angin = data.children[10].children[2].children[2].children[0]
+                }else if(date.getHours() >= 18 ){
+                    cuacaHariIni = cuaca(data.children[8].children[3].children[0].children[0])
+                    kelembapan = data.children[2].children[3].children[0].children[0]
+                    angin = data.children[10].children[3].children[2].children[0]
+                }
+            }
+            let cuacaBesok = cuaca(data.children[8].children[4].children[0].children[0])
+            let waktuBesok = convertDate(data.children[8].children[4].attributes.datetime)
+            let kelembapanBesok = data.children[2].children[4].children[0].children[0]
+            let suhuBesok = data.children[4].children[1].children[0].children[0]
+            let anginBesok = data.children[10].children[4].children[2].children[0]
+            if(date.getDate()+1 === parseInt(justDate)){
+                if(date.getHours() >= 6 && date.getHours() < 12){
+                    cuacaBesok = cuaca(data.children[8].children[5].children[0].children[0])
+                    kelembapanBesok = data.children[2].children[5].children[0].children[0]
+                    anginBesok = data.children[10].children[5].children[2].children[0]
+                }else if(date.getHours() >= 12 && date.getHours() < 18){
+                    cuacaBesok = cuaca(data.children[8].children[6].children[0].children[0])
+                    kelembapanBesok = data.children[2].children[6].children[0].children[0]
+                    anginBesok = data.children[10].children[6].children[2].children[0]
+                }else if(date.getHours() >= 18 ){
+                    cuacaBesok = cuaca(data.children[8].children[7].children[0].children[0])
+                    kelembapanBesok = data.children[2].children[7].children[0].children[0]
+                    anginBesok = data.children[10].children[7].children[2].children[0]
+                }
+            }
+            let cuacaLusa = cuaca(data.children[8].children[8].children[0].children[0])
+            let waktuLusa = convertDate(data.children[8].children[8].attributes.datetime)
+            let kelembapanLusa = data.children[2].children[8].children[0].children[0]
+            let suhuLusa = data.children[4].children[2].children[0].children[0]
+            let anginLusa = data.children[10].children[8].children[2].children[0]
+            if(date.getDate()+2 === parseInt(justDate)){
+                if(date.getHours() >= 6 && date.getHours() < 12){
+                    cuacaLusa = cuaca(data.children[8].children[9].children[0].children[0])
+                    kelembapanLusa = data.children[2].children[9].children[0].children[0]
+                    anginLusa = data.children[10].children[9].children[2].children[0]
+                }else if(date.getHours() >= 12 && date.getHours() < 18){
+                    cuacaLusa = cuaca(data.children[8].children[10].children[0].children[0])
+                    kelembapanLusa = data.children[2].children[10].children[0].children[0]
+                    anginLusa = data.children[10].children[10].children[2].children[0]
+                }else if(date.getHours() >= 18 ){
+                    cuacaLusa = cuaca(data.children[8].children[11].children[0].children[0])
+                    kelembapanLusa = data.children[2].children[11].children[0].children[0]
+                    anginLusa = data.children[10].children[11].children[2].children[0]
+                }
+            }
+            dataArr = [{
+              'waktuHariIni' : waktuHariIni,
+              'cuacaHariIni' : cuacaHariIni,
+              'kelembapanHariIni' : kelembapan,
+              'suhu':suhu,
+              'angin':angin,
+              'waktuBesok' : waktuBesok,
+              'cuacaBesok': cuacaBesok,
+              'kelembapanBesok' : kelembapanBesok,
+              'suhuBesok':suhuBesok,
+              'anginBesok':anginBesok,
+              'waktuLusa': waktuLusa,
+              'cuacaLusa': cuacaLusa,
+              'suhuLusa':suhuLusa,
+              'kelembapanLusa' : kelembapanLusa,
+              'anginLusa':anginLusa,
+              'kota':kot,
+              'provinsi':prov
+            }]
+            cuacaContainer.innerHTML = infoCuacaTemplate(dataArr)
+          }
+        })
+      }else{
+        getCuaca = await axios.get(`https://cuacain-backend.herokuapp.com/cuaca/${prov.toLowerCase()}`)
+        getCuaca.data.slice(1).map((data)=>{
+          if(data.attributes.description === kot){
+            const date = new Date()
+            const justDate = dateOnly(data.children[8].children[0].attributes.datetime)
+            let cuacaHariIni = cuaca(data.children[8].children[0].children[0].children[0])
+            let waktuHariIni = convertDate(data.children[8].children[0].attributes.datetime)
+            let kelembapan = data.children[2].children[0].children[0].children[0]
+            let suhu = data.children[4].children[0].children[0].children[0]
+            let angin = data.children[10].children[0].children[2].children[0]
+            if(date.getDate() === parseInt(justDate)){
+                if(date.getHours() >= 6 && date.getHours() < 12){
+                    cuacaHariIni = cuaca(data.children[8].children[1].children[0].children[0])
+                    kelembapan = data.children[2].children[1].children[0].children[0]
+                    angin = data.children[10].children[1].children[2].children[0]
+                }else if(date.getHours() >= 12 && date.getHours() < 18){
+                    cuacaHariIni = cuaca(data.children[8].children[2].children[0].children[0])
+                    kelembapan = data.children[2].children[2].children[0].children[0]
+                    angin = data.children[10].children[2].children[2].children[0]
+                }else if(date.getHours() >= 18 ){
+                    cuacaHariIni = cuaca(data.children[8].children[3].children[0].children[0])
+                    kelembapan = data.children[2].children[3].children[0].children[0]
+                    angin = data.children[10].children[3].children[2].children[0]
+                }
+            }
+            let cuacaBesok = cuaca(data.children[8].children[4].children[0].children[0])
+            let waktuBesok = convertDate(data.children[8].children[4].attributes.datetime)
+            let kelembapanBesok = data.children[2].children[4].children[0].children[0]
+            let suhuBesok = data.children[4].children[1].children[0].children[0]
+            let anginBesok = data.children[10].children[4].children[2].children[0]
+            if(date.getDate()+1 === parseInt(justDate)){
+                if(date.getHours() >= 6 && date.getHours() < 12){
+                    cuacaBesok = cuaca(data.children[8].children[5].children[0].children[0])
+                    kelembapanBesok = data.children[2].children[5].children[0].children[0]
+                    anginBesok = data.children[10].children[5].children[2].children[0]
+                }else if(date.getHours() >= 12 && date.getHours() < 18){
+                    cuacaBesok = cuaca(data.children[8].children[6].children[0].children[0])
+                    kelembapanBesok = data.children[2].children[6].children[0].children[0]
+                    anginBesok = data.children[10].children[6].children[2].children[0]
+                }else if(date.getHours() >= 18 ){
+                    cuacaBesok = cuaca(data.children[8].children[7].children[0].children[0])
+                    kelembapanBesok = data.children[2].children[7].children[0].children[0]
+                    anginBesok = data.children[10].children[7].children[2].children[0]
+                }
+            }
+            let cuacaLusa = cuaca(data.children[8].children[8].children[0].children[0])
+            let waktuLusa = convertDate(data.children[8].children[8].attributes.datetime)
+            let kelembapanLusa = data.children[2].children[8].children[0].children[0]
+            let suhuLusa = data.children[4].children[2].children[0].children[0]
+            let anginLusa = data.children[10].children[8].children[2].children[0]
+            if(date.getDate()+2 === parseInt(justDate)){
+                if(date.getHours() >= 6 && date.getHours() < 12){
+                    cuacaLusa = cuaca(data.children[8].children[9].children[0].children[0])
+                    kelembapanLusa = data.children[2].children[9].children[0].children[0]
+                    anginLusa = data.children[10].children[9].children[2].children[0]
+                }else if(date.getHours() >= 12 && date.getHours() < 18){
+                    cuacaLusa = cuaca(data.children[8].children[10].children[0].children[0])
+                    kelembapanLusa = data.children[2].children[10].children[0].children[0]
+                    anginLusa = data.children[10].children[10].children[2].children[0]
+                }else if(date.getHours() >= 18 ){
+                    cuacaLusa = cuaca(data.children[8].children[11].children[0].children[0])
+                    kelembapanLusa = data.children[2].children[11].children[0].children[0]
+                    anginLusa = data.children[10].children[11].children[2].children[0]
+                }
+            }
+            dataArr = [{
+              'waktuHariIni' : waktuHariIni,
+              'cuacaHariIni' : cuacaHariIni,
+              'kelembapanHariIni' : kelembapan,
+              'suhu':suhu,
+              'angin':angin,
+              'waktuBesok' : waktuBesok,
+              'cuacaBesok': cuacaBesok,
+              'kelembapanBesok' : kelembapanBesok,
+              'suhuBesok':suhuBesok,
+              'anginBesok':anginBesok,
+              'waktuLusa': waktuLusa,
+              'cuacaLusa': cuacaLusa,
+              'suhuLusa':suhuLusa,
+              'kelembapanLusa' : kelembapanLusa,
+              'anginLusa':anginLusa,
+              'kota':kot,
+              'provinsi':prov
+            }]
+            cuacaContainer.innerHTML = infoCuacaTemplate(dataArr)
+          }
+        })
+      }
     })
     // Belum filtering cuaca by daerah
 
-    cekCuaca1.style.display = 'none';
     let innerTexts = document.querySelectorAll('.text_wraper .innerText');
     if(innerTexts)
     {
@@ -104,64 +289,6 @@ const CekCuaca = {
             }, speed);
         });
     }
-    
-    const listTime = document.querySelectorAll('li');
-    const timeHour = document.querySelector('p.jam');
-
-    listTime.forEach( item => {
-        item.addEventListener('click', () => {
-            listTime.forEach( el => {
-                if(el.classList.contains('active')){
-                    el.classList.remove('active');
-                }
-            })
-            item.classList.add('active');
-        })
-    })
-
-    const getTime = () => {
-        const hour = new Date().getHours();
-        timeHour.innerText = `${hour}.00`;
-    }
-
-getTime();
-
-
-    const main = document.querySelector('#main-content');
-    const submit = document.querySelector('button');
-    submit.addEventListener('click', async () => {
-      cekCuacaRender();
-      hiddenForm();
-    })
-
-    const cekCuacaRender = () => {
-      cekCuaca1.style.display = 'block'
-      const back = document.querySelector('.back');
-      back.addEventListener('click', () => {
-        console.log('nas')
-        showForm();
-      })
-    }
-
-    const hiddenForm = () => {
-      const formContainer = document.querySelector('.form-container');
-      const wraper = document.querySelector('.wraper')
-      const searchButton = document.querySelector('.search-btn');
-
-      formContainer.style.display = 'none';
-      wraper.style.display = 'none';
-    }  
-
-    const showForm = () => {
-      const cekCuaca = document.querySelector('.cek-cuaca')
-      const formContainer = document.querySelector('.form-container');
-      const wraper = document.querySelector('.wraper');
-
-      formContainer.style.display = 'flex';
-      wraper.style.display = 'flex';
-      cekCuaca.style.display = 'none';
-    }
-    
 
   },
 };

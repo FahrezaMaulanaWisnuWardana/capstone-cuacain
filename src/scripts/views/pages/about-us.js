@@ -1,3 +1,5 @@
+import LogoBmkg from '../../../public/images/logo-bmkg.png'
+
 const AboutUs = {
   async render() {
     return `
@@ -13,6 +15,11 @@ const AboutUs = {
           Kami ingin merancang sebuah aplikasi perkiraan cuaca untuk mempermudah seseorang dalam mendapatkan informasi terbaru mengenai kondisi 
           cuaca di sekitar atau daerah yang ingin dikunjungi dan pada aplikasi yang kami rancang juga akan memuat layanan informasi berita gempa terkini di seluruh indonesia.
       </p>
+      <h1 class="crew-header">Terimakasih Kepada : </h1>
+      <div class="logo-partner">
+        <img src="${LogoBmkg}" />
+      </div>
+      <p>Sumber data cuaca : <a target="_blank" href="https://data.bmkg.go.id/" style="color:#f2f2f2; text-decoration:none">BMKG</a></p>
 
       <h1 class="crew-header">Our Crew</h1>
       <div class="profile">

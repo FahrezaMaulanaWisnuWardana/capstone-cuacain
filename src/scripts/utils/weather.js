@@ -1,49 +1,54 @@
 import GetWeather from '../data/weather/get-weather'
+import Rain from '../../public/images/rain.png' 
+import Sun from '../../public/images/sun.png' 
+import Clouds from '../../public/images/clouds.png' 
+import Cloudy from '../../public/images/cloudy.png' 
+import Storm from '../../public/images/storm.png' 
 
 const cuaca = (kode) => {
     let kodeCuaca = [0,1,2,3,4,5,10,45,60,61,63,80,95,97]
     let checkCuaca = kodeCuaca.find(code => code === parseInt(kode))
     if(checkCuaca === 0){
-        return "Cerah"
+        return ["Cerah",Sun]
     }
     if(checkCuaca === 1){
-        return "Cerah Berawan"
+        return ["Cerah Berawan",Cloudy]
     }
     if(checkCuaca === 2){
-        return "Cerah Berawan"
+        return ["Cerah Berawan",Cloudy]
     }
     if(checkCuaca === 3){
-        return "Berawan"
+        return ["Berawan",Clouds]
     }
     if(checkCuaca === 4){
-        return "Berawan Tebal"
+        return ["Berawan Tebal",Clouds]
     }
     if(checkCuaca === 5){
-        return "Udara Kabur"
+        return ["Udara Kabur",Clouds]
     }
     if(checkCuaca === 10){
-        return "Asap"
+        return ["Asap",Clouds]
     }
     if(checkCuaca === 45){
-        return "Kabut"
+        return ["Kabut",Clouds]
     }
     if(checkCuaca === 60){
-        return "Hujan Ringan"
+        return ["Hujan Ringan",Rain]
     }
     if(checkCuaca === 61){
-        return "Hujan Sedang"
+        return ["Hujan Sedang",Rain]
     }
     if(checkCuaca === 63){
-        return "Hujan Lebat"
+        return ["Hujan Lebat",Rain]
     }
     if(checkCuaca === 80){
-        return "Hujan Lokal"
+        return ["Hujan Lokal",Rain]
     }
     if(checkCuaca === 95 ){
-        return "Hujan Petir"
+        return ["Hujan Petir",Storm]
     }
     if(checkCuaca === 97){
-        return "Hujan Petir"
+        return ["Hujan Petir",Storm]
     }
     return "Code Not Found"
 }

@@ -9,58 +9,67 @@ const HomeTemplate = (data) => {
           <div class="box">
               <h3>${data[0].waktuHariIni}</h3>
               <div class="weather-info">
-                  <h1>${data[0].cuacaHariIni}</h1>
+                  <h1>${data[0].cuacaHariIni[0]}</h1>
               </div>
           </div>
           <div class="box">
               <h3>${data[0].waktuBesok}</h3>
               <div class="weather-info">
-                  <h1>${data[0].cuacaBesok}</h1>
+                  <h1>${data[0].cuacaBesok[0]}</h1>
               </div>
           </div>
           <div class="box">
               <h3>${data[0].waktuLusa}</h3>
               <div class="weather-info">
-                  <h1>${data[0].cuacaLusa}</h1>
+                  <h1>${data[0].cuacaLusa[0]}</h1>
               </div>
           </div>
       </div>`
 }
 
-const infoCuacaTemplate = () => {
+const infoCuacaTemplate = (data) => {
     return `
-    <div class="cek-cuaca">
-    <button class="back"><</button>
-    <h2 class="kota">Jakarta</h2>
-    <div class="detail">
-        <h2 class="detail-kota">Jakarta Pusat</h2>
-        <h3 class="provinsi">Provinsi DKI Jakarta</h3>
+        <div class="cek-cuaca">
+            <div class="detail">
+                <h2 class="detail-kota">${data[0].kota}</h2>
+                <h3 class="provinsi">Provinsi ${data[0].provinsi}</h3>
 
-        <ul>
-            <li class="active-time">Sen, 30 Mei</li>
-            <li>Sel, 31 Mei</li>
-            <li>Rab, 01 Jun</li>
-            <li>Kam, 02 Jun</li>
-            <li>Jum, 03 Jun</li>
-            <li>Sab, 04 Jun</li>
-            <li>Min, 05 Jun</li>
-        </ul>
+                <ul style="color:#f2f2f2">
+                    <li class="tabs-cuaca active-time" onclick="tabsCuaca(event, 'hariIni')">${data[0].waktuHariIni}</li>
+                    <li class="tabs-cuaca" onclick="tabsCuaca(event, 'besok')">${data[0].waktuBesok}</li>
+                    <li class="tabs-cuaca" onclick="tabsCuaca(event, 'lusa')">${data[0].waktuLusa}</li>
+                </ul>
 
-        <div class="image-container">
-            <img src="images/cloud.jpg" alt="">
-            <div class="detail-cuaca">
-                <p class="jam"></p>
-                <img src="images/rain.png" alt="">
-                <p class="infoCuaca">Cerah Berawan</p>
-                <p class="suhu">26&#9900; Celcius</p>
-                <p class="kelembapan">85%</p>
-                <p class="kecepatanAngin">10 km/jam</p>
-                <p class="arahAngin">Barat Daya</p>
-            </div>                
-        </div>            
-    </div>
-</div>
-`
+                <div class="image-container tabcontent" id="hariIni" style="display:block;">
+                    <div class="detail-cuaca" style="color:#f2f2f2">
+                        <img src="${data[0].cuacaHariIni[1]}" alt="">
+                        <p class="infoCuaca">${data[0].cuacaHariIni[0]}</p>
+                        <p class="suhu">${data[0].suhu}&#9900; Celcius</p>
+                        <p class="kelembapan">Kelembapan ${data[0].kelembapanHariIni}%</p>
+                        <p class="kecepatanAngin">${Math.round(data[0].angin)} km/jam</p>
+                    </div>                
+                </div>
+                <div class="image-container tabcontent" id="besok">
+                    <div class="detail-cuaca" style="color:#f2f2f2">
+                        <img src="${data[0].cuacaBesok[1]}" alt="">
+                        <p class="infoCuaca">${data[0].cuacaBesok[0]}</p>
+                        <p class="suhu">${data[0].suhuBesok}&#9900; Celcius</p>
+                        <p class="kelembapan">Kelembapan ${data[0].kelembapanBesok}%</p>
+                        <p class="kecepatanAngin">${Math.round(data[0].anginBesok)} km/jam</p>
+                    </div>                
+                </div>
+                <div class="image-container tabcontent" id="lusa">
+                    <div class="detail-cuaca" style="color:#f2f2f2">
+                        <img src="${data[0].cuacaLusa[1]}" alt="">
+                        <p class="infoCuaca">${data[0].cuacaLusa[0]}</p>
+                        <p class="suhu">${data[0].suhuLusa}&#9900; Celcius</p>
+                        <p class="kelembapan">Kelembapan ${data[0].kelembapanLusa}%</p>
+                        <p class="kecepatanAngin">${Math.round(data[0].anginLusa)} km/jam</p>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    `
 }
 const listGempaTerbaru = (data) => {
     return `
@@ -70,11 +79,11 @@ const listGempaTerbaru = (data) => {
             <img class="m-auto" style="width:75%" src="https://data.bmkg.go.id/DataMKG/TEWS/${data[0].shakemap}">
             <p>${data[0].tanggal} - ${data[0].waktu}</p>
             <div class="d-flex middle-content my">
-                <img src="${GempaIcon}" alt="" class="ml" height="32px" id="kedalaman">
+                <img src="${GempaIcon}" alt="kedalaman" class="ml" height="32px" id="kedalaman">
                 <label for="kedalaman" class="ml">${data[0].kedalaman}</label>
-                <img src="${WaveIcon}" alt="" class="ml" height="32px" id="magnitude">
+                <img src="${WaveIcon}" alt="magnitude" class="ml" height="32px" id="magnitude">
                 <label for="magnitude" class="ml">${data[0].kekuatan} M</label>
-                <img src="${LocIcon}" alt="" class="ml" height="32px" id="location">
+                <img src="${LocIcon}" alt="location" class="ml" height="32px" id="location">
                 <label for="location" class="ml">LS : ${data[0].lintang} - Bujur : ${data[0].bujur}</label>
             </div>
             <p>Wilayah dirasakan: ${data[0].dirasakan}</p>

@@ -3,25 +3,22 @@
 }
 
 .header {
-    height: 100vh;
-    margin-top: -145px;
-    padding: 5%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    /* display: none; */
-    justify-content: center;
-    align-items: center;
     font-family: sans-serif;
 }
-
+form{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .search-field{
     width: 300px;
     height: 50px;
     padding: 10px;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     outline: none;
+    margin:0 10px;
 }
 
 .search-btn{
@@ -30,29 +27,21 @@
     background: #ffeb3f;
     border: none;
     color: #000;
-    border-radius: 25px;
+    border-radius: 10px;
     
 }
-
 .search-btn{
     background: #ffc107;
 }
-
 .wraper {
     color: #fff;
     font-size: 1.5rem;
     text-shadow: 2px 2px 2px #e67e22;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(140px);
-    /* margin-top: 150px; */
-    
+    padding-top: 50px;
+    text-align: center;
 }
-
 .pre_text {
     font-weight: bold;
-    margin-right: 16px;
 }
 
 .text_wraper {
@@ -95,11 +84,11 @@
 }
 
 .detail-kota {
-    color: rgb(168, 168, 168);
+    color: #f2f2f2;
 }
 
 .provinsi {
-    color: rgb(168, 168, 168);
+    color: #f2f2f2;
     margin: 10px 0 20px;
 }
 
@@ -112,6 +101,7 @@
 
 .active-time {
     background-color: greenyellow;
+    color:#000;
 }
 
 .detail li {
@@ -137,8 +127,6 @@
 }
 
 .detail-cuaca {
-    position: absolute;
-    top: 20px;
     width: 100%;
     text-align: center;
 }
