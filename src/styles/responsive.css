@@ -85,16 +85,16 @@
     .pre_text{
         display: block;
     }
-    form{
+    #form{
         padding: 10px;
         display: block !important;
     }
-    form > select {
+    #form > select {
         width: 100% !important;
         display: block;
         margin:10px 0 !important;
     }
-    form > button{
+    #form > button{
         display: block;
         width: 100% !important;
     }

@@ -23,15 +23,15 @@ const CekCuaca = {
     <script src="textslide.js"></script>
 
     <div class="header form-container">
-        <form>
-        <select class="search-field business" id="provinsi">
-          <option value="">Pilih Provinsi</option>
-        </select>
-        <select class="search-field business" id="kota">
-          <option value="">Pilih Kota</option>
-        </select>
+        <div id="form">
+            <select class="search-field business" id="provinsi">
+              <option value="">Pilih Provinsi</option>
+            </select>
+            <select class="search-field business" id="kota">
+              <option value="">Pilih Kota</option>
+            </select>
             <button class="search-btn" id="cari">Search</button>
-        </form>
+        </div>
     </div>  
     <div id="cuacaContainer" style="min-height:100vh"></div>
     `;
